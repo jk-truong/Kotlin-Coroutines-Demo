@@ -8,19 +8,6 @@ private const val BASE_URL = "http://kotlin-book.bignerdranch.com/2e"
 private const val FLIGHT_ENDPOINT = "$BASE_URL/flight"
 private const val LOYALTY_ENDPOINT = "$BASE_URL/loyalty"
 
-fun main() {
-    // runBlocking blocks its thread until coroutine execution is complete
-    runBlocking {
-        println("Started")
-        // launch normal coroutine
-        launch {
-            val flight = fetchFlight("Jo mama")
-            println(flight)
-        }
-        println("Finished")
-    }
-}
-
 // Another coroutine that takes in a different context. It is a suspending function, which must be called inside another
 // suspending fun or coroutine builder. coroutineScope creates a new coroutine scope, but inherits the dispatcher so
 // the coroutine will stop when its parent stops.
